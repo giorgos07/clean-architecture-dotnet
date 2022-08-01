@@ -1,1 +1,1 @@
-# clean-architecture-dotnet
+# Clean Architecture - .NET 6
