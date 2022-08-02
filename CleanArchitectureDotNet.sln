@@ -16,15 +16,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{62AD51FE-5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{94CC8B1F-BF86-425D-943D-356C0AA8AC82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitectureDotNet.Domain", "src\CleanArchitectureDotNet.Domain\CleanArchitectureDotNet.Domain.csproj", "{8AE4F01E-7F02-473E-BCD9-6C57C26968C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitectureDotNet.Domain", "src\CleanArchitectureDotNet.Domain\CleanArchitectureDotNet.Domain.csproj", "{8AE4F01E-7F02-473E-BCD9-6C57C26968C5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{C304F959-F0C4-453B-AC5F-AB3CBE0B8178}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitectureDotNet.Data", "src\CleanArchitectureDotNet.Data\CleanArchitectureDotNet.Data.csproj", "{AE9FDE2D-5B49-4A8B-AD52-C91785D4179E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitectureDotNet.Data", "src\CleanArchitectureDotNet.Data\CleanArchitectureDotNet.Data.csproj", "{AE9FDE2D-5B49-4A8B-AD52-C91785D4179E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{CEDCDD96-B804-4EE8-A2A7-264F278A4227}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitectureDotNet.Application", "src\CleanArchitectureDotNet.Application\CleanArchitectureDotNet.Application.csproj", "{50490640-351A-4F52-80CD-62085079F0A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitectureDotNet.Application", "src\CleanArchitectureDotNet.Application\CleanArchitectureDotNet.Application.csproj", "{50490640-351A-4F52-80CD-62085079F0A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitectureDotNet.IoC", "src\CleanArchitectureDotNet.IoC\CleanArchitectureDotNet.IoC.csproj", "{8FEE019F-C34A-4B42-9103-7033BC80F691}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +50,10 @@ Global
 		{50490640-351A-4F52-80CD-62085079F0A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50490640-351A-4F52-80CD-62085079F0A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50490640-351A-4F52-80CD-62085079F0A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FEE019F-C34A-4B42-9103-7033BC80F691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FEE019F-C34A-4B42-9103-7033BC80F691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FEE019F-C34A-4B42-9103-7033BC80F691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FEE019F-C34A-4B42-9103-7033BC80F691}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{AE9FDE2D-5B49-4A8B-AD52-C91785D4179E} = {C304F959-F0C4-453B-AC5F-AB3CBE0B8178}
 		{CEDCDD96-B804-4EE8-A2A7-264F278A4227} = {4BC11D64-70B2-47C5-91B5-CD5F1EB21AEF}
 		{50490640-351A-4F52-80CD-62085079F0A9} = {CEDCDD96-B804-4EE8-A2A7-264F278A4227}
+		{8FEE019F-C34A-4B42-9103-7033BC80F691} = {C304F959-F0C4-453B-AC5F-AB3CBE0B8178}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {27325138-8EB3-4014-A482-387906C27F55}

@@ -24,6 +24,7 @@ namespace CleanArchitectureDotNet.Mvc
                     .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddDbContext<UniversityDbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("UniversityDbConnection")));
             services.AddControllersWithViews();
+            services.RegisterServices();
         }
 
         public void Configure(IApplicationBuilder app)

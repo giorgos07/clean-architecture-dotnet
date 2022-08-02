@@ -13,6 +13,6 @@
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.7" />
 	</ItemGroup>
 	<ItemGroup>
-	  <ProjectReference Include="..\CleanArchitectureDotNet.Data\CleanArchitectureDotNet.Data.csproj" />
+		<ProjectReference Include="..\CleanArchitectureDotNet.IoC\CleanArchitectureDotNet.IoC.csproj" />
 	</ItemGroup>
 </Project>
