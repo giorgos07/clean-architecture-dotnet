@@ -13,9 +13,9 @@ namespace CleanArchitectureDotNet.Application.Services
             _courseRepository = courseRepository ?? throw new ArgumentNullException(nameof(courseRepository));
         }
 
-        public async Task<CourseViewModel> GetCourses()
+        public async Task<CourseViewModel> Get()
         {
-            var courses = await _courseRepository.GetCourses();
+            var courses = await _courseRepository.Get();
             return new CourseViewModel(courses);
         }
     }

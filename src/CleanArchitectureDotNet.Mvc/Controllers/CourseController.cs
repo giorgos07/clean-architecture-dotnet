@@ -19,7 +19,7 @@ namespace CleanArchitectureDotNet.Mvc.Controllers
         [HttpGet]
         public async Task<ViewResult> List()
         {
-            var model = await _courseService.GetCourses();
+            var model = await _courseService.Get();
             return View(model);
         }
     }

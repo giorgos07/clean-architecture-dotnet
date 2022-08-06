@@ -14,7 +14,13 @@ namespace CleanArchitectureDotNet.Data.Repositories
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
-        public async Task<IEnumerable<Course>> GetCourses()
+        public async Task Add(Course course)
+        {
+            _dbContext.Courses.Add(course);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<Course>> Get()
         {
             var courses = await _dbContext.Courses.ToListAsync();
             return courses;

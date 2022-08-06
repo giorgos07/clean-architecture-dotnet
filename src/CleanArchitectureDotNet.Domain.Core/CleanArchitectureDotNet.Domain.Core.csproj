@@ -6,6 +6,6 @@
 		<TargetFramework>net6.0</TargetFramework>
 	</PropertyGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\CleanArchitectureDotNet.Domain\CleanArchitectureDotNet.Domain.csproj" />
+		<PackageReference Include="MediatR" Version="10.0.1" />
 	</ItemGroup>
 </Project>
