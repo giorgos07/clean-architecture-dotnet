@@ -1,4 +1,5 @@
 ﻿using CleanArchitectureDotNet.Application.Interfaces;
+using CleanArchitectureDotNet.Application.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,8 +20,8 @@ namespace CleanArchitectureDotNet.Mvc.Controllers
         [HttpGet]
         public async Task<ViewResult> List()
         {
-            var model = await _courseService.Get();
-            return View(model);
+            var courses = await _courseService.Get();
+            return View(new CourseViewModel(courses));
         }
     }
 }

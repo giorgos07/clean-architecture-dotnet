@@ -1,9 +1,7 @@
 ﻿using CleanArchitectureDotNet.Data.Context;
-using CleanArchitectureDotNet.Mvc.Data;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanArchitectureDotNet.Mvc
+namespace CleanArchitectureDotNet.Api
 {
     public class Startup
     {
@@ -18,31 +16,26 @@ namespace CleanArchitectureDotNet.Mvc
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("IdentityDbConnection")));
-            services.AddDatabaseDeveloperPageExceptionFilter();
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                    .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddControllers();
+            services.AddEndpointsApiExplorer();
+            services.AddSwaggerGen();
             services.AddDbContext<UniversityDbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("UniversityDbConnection")));
             services.RegisterServices();
         }
 
         public void Configure(IApplicationBuilder app)
         {
-            if (!_hostingEnvironment.IsDevelopment())
+            if (_hostingEnvironment.IsDevelopment())
             {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
             app.UseRouting();
-            app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }

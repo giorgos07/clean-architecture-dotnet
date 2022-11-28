@@ -4,11 +4,11 @@ namespace CleanArchitectureDotNet.Application.ViewModels
 {
     public class CourseViewModel
     {
-        public CourseViewModel(IEnumerable<Course> courses)
+        public CourseViewModel(IEnumerable<CourseModel> courses)
         {
             Courses = courses;
         }
 
-        public IEnumerable<Course> Courses { get; }
+        public IEnumerable<CourseModel> Courses { get; }
     }
 }

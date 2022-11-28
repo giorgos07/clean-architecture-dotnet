@@ -4,6 +4,7 @@ namespace CleanArchitectureDotNet.Application.Interfaces
 {
     public interface ICourseService
     {
-        Task<CourseViewModel> Get();
+        Task Create(CreateCourseRequest course);
+        Task<IEnumerable<CourseModel>> Get();
     }
 }

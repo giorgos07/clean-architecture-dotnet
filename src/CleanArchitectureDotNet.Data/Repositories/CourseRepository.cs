@@ -14,7 +14,7 @@ namespace CleanArchitectureDotNet.Data.Repositories
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
         }
 
-        public async Task Add(Course course)
+        public async Task Create(Course course)
         {
             _dbContext.Courses.Add(course);
             await _dbContext.SaveChangesAsync();

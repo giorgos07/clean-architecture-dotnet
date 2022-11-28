@@ -9,7 +9,9 @@ namespace CleanArchitectureDotNet.Domain.CommandHandlers
     {
         private readonly ICourseRepository _courseRepository;
 
-        public CreateCourseCommandHandler(ICourseRepository courseRepository)
+        public CreateCourseCommandHandler(
+            ICourseRepository courseRepository
+        )
         {
             _courseRepository = courseRepository ?? throw new ArgumentNullException(nameof(courseRepository));
         }
@@ -22,7 +24,7 @@ namespace CleanArchitectureDotNet.Domain.CommandHandlers
                 ImageUrl = request.ImageUrl,
                 Name = request.Name
             };
-            await _courseRepository.Add(newCourse);
+            await _courseRepository.Create(newCourse);
             return true;
         }
     }

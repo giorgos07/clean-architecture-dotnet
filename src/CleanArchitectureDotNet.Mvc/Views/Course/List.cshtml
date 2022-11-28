@@ -4,14 +4,35 @@
     ViewData["Title"] = "Courses List";
 }
 
-<div class="container body-content">
-    <div class="row course-content">
-        @foreach (var course in Model.Courses)
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Image URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Courses.Count(); i++)
         {
-            <div class="course-image-container">
-                <div class="course-image" style="background-image: url(@course.ImageUrl)"></div>
-            </div>
-            <span>@course.Name</span>
+            var course = Model.Courses.ElementAt(i);
+            <tr>
+                <th scope="row">@(i + 1)</th>
+                <td>@course.Name</td>
+                <td>@(!string.IsNullOrWhiteSpace(course.Description) ? course.Description : "-")</td>
+                <td>
+                    @if (!string.IsNullOrWhiteSpace(course.ImageUrl))
+                    {
+                        var imageUrlSegments = course.ImageUrl.Split('/').ToList();
+                        <a href="@course.ImageUrl" target="_blank">@imageUrlSegments.Last()</a>
+                    }
+                    else
+                    {
+                        @: -
+                    }
+                </td>
+            </tr>
         }
-    </div>
-</div>
+    </tbody>
+</table>
